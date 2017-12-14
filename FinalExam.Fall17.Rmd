@@ -1,0 +1,147 @@
+---
+title: "Final Examination"
+runtime: shiny
+output: html_document
+---
+
+# Fall 2017 TRGN510 Final Exam
+
+This is the final exam markdown for TRGN510. You may not consult other students.  You are expected to use the internet.  You should double check your work. It is due Thursday December 14th @ 1PM.
+
+  Please edit the markdown such by either (1) striking *italicized* words that are incorrect using ~~strikethrough~~ (\~\~strikethrough\~\~), (2) deleting the incorrect *italicized* terms, or (3) putting the correct answer where requested.
+
+See below for an example.  We see that both _true_ and _false_ are options.  To answer the question, we delete _false_
+
+### Example
+
+**Before the exam**
+
+* It is __true__ __false__ that the earth is round and the average temperature of the earth has risen within our lifetime
+
+**After you edited by deleting __false__ or crossing it out, any one of these is ok **
+
+* It is __true__ that the earth is round and the average temperature of the earth has risen within our lifetime
+* It is __true__ ~~_false_~~ that the earth is round and the average temperature of the earth has risen within our lifetime
+
+***
+
+## Exam
+
+### Question 1: "5" is a String datatype
+
+### Question 2:. 5 is Integer datatype.
+
+### Question 3: "" is a Null datatype.
+
+### Question 4: 2.0 is a Float datatype.
+
+### Question 5: "true" is an String datatype.
+
+### Question 6: TRUE is Boolean datatype.
+
+### Question 7: When we run the command *j<-c("d",1,"b")* in *R*, creates an array stored in *a*.
+
+### Question 8: Please load in the iris dataset from the ggplot2 library into a variable with the name "mydata" below, this should be done within an R codeblock.
+
+```{r}
+library(ggplot2)
+mydata <- iris
+summary(iris)
+class(iris)
+```
+
+### Question 9. What type of data is found within mydata$Species, from the above question 8?
+
+string
+
+ 
+### Question 10. Create a codeblock to find the median of Sepal.Width
+
+```{r}
+median(mydata$Sepal.Width)
+```
+
+### Question 11. Create a R codeblock to create a violin plot of Sepal.Width from the factors in Species using ggplot2
+
+```{r}
+library(ggplot2)
+p <- ggplot(mydata, aes(x=Species, y=Sepal.Width)) + geom_violin()
+print(p)
+```
+ 
+### Question 12. Within a codeblock and using between 140 and 740 characters, describe the differences between GPLV3 and MIT Licenses, and store that as a String in the variable "myanswer"
+
+
+```{r}
+myanswer <- "We can modify GPU and use it for our own purpose as long as we are not distributing it. If we distribute it, then the entire project using the GPL code also becomes GPL automatically. Which means, it must be open-sourced, and the recipient gets all the same rights as we have. And that would include the proprietary code which would then no longer be proprietary - it becomes open source.The difference with MIT is that even if we actually distribute the proprietary code that is using the MIT licensed code, we do not have to make the code open source. We can distribute it as a closed app where the code is encrypted or is a binary. Including the MIT-licensed code can be encrypted, as long as it carries the MIT license notice."
+```
+
+### Question 13. Write an R code block that provides the number of characters in "myanswer".
+
+```{r}
+nchar(myanswer)
+```
+
+### Question 14. Write an R codeblock that replaces "MIT" with "Massachusetts Institute of Technology" and "GPU" with "General Public License" within "myanswer"
+
+```{r}
+myanswer <- gsub("MIT","Massachusetts Institute of Technology", myanswer)
+gsub("GPU", "General Public License", myanswer)
+```
+
+### Question 15. The data below is typically json
+
+> data ={
+        name: "John",
+        address: {
+            street: "459 E Jon St.",
+            city: "Springfield,
+            state: "Illinois",
+        },
+        age:14
+    }
+    
+### Question 16. In the example above, data.address is an unordered embedded document (or list)
+
+* In a bash code block, write a 1 line command that counts number hidden files in your home directory (hidden means starts with a .). The example should use a pipe, ls, and wc
+
+```{bash}
+ls -ld ~/.??* | wc -l
+```
+
+### Question 17. What is the first line of a BASH script?
+
+```{bash}
+#!/bin/bash
+```
+
+
+### Question 18. Please create a github repository 'YourNameFinalExam', replacing with your name and using camelcase.  Please put your completed exam in it, and share this exam with me.
+
+> Your answer will appear as an email request to me collaborate!
+
+***
+
+
+<!-- The text below is just to reformat the page, using css styling -->
+```{r results="asis", echo = FALSE}
+cat("
+<style>
+h1 {
+    background-color: #990000;
+    color:#FFF;
+    text-align:center;
+}
+h2 {
+   background-color:#f3d6d6;
+   text-align:center;
+   color:#333
+}
+h3 {
+   margin-left:-5px;
+   color:#333
+}
+
+</style>
+")
+```
